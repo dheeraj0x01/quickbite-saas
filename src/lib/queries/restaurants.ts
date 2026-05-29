@@ -20,6 +20,34 @@ export async function getRestaurantBySlug(
     .maybeSingle();
 
   if (error) {
+    // ──────────────────────────────────────────────────────────────
+    // TEMPORARY DEBUG LOGGING — remove after the production issue
+    // is diagnosed. Logs the full Supabase error shape plus a clean
+    // view of the env vars (length only — never the actual values).
+    // ──────────────────────────────────────────────────────────────
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    const isClean = (v: string | undefined) =>
+      typeof v === "string" && /^[\x20-\x7e]*$/.test(v);
+    console.error("[getRestaurantBySlug] DEBUG", {
+      slug,
+      supabase_error: {
+        message: error.message,
+        code: error.code,
+        details: error.details,
+        hint: error.hint,
+      },
+      env: {
+        NEXT_PUBLIC_SUPABASE_URL_exists: typeof url === "string" && url.length > 0,
+        NEXT_PUBLIC_SUPABASE_URL_length: url?.length ?? 0,
+        NEXT_PUBLIC_SUPABASE_URL_clean: isClean(url),
+        SUPABASE_SERVICE_ROLE_KEY_exists:
+          typeof key === "string" && key.length > 0,
+        SUPABASE_SERVICE_ROLE_KEY_length: key?.length ?? 0,
+        SUPABASE_SERVICE_ROLE_KEY_clean: isClean(key),
+      },
+    });
+
     console.error("[getRestaurantBySlug] error:", error.message);
     return null;
   }
