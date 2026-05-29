@@ -1,0 +1,360 @@
+/* ============================================================
+   Kitchen Display System — dark, premium operations UI.
+   ============================================================ */
+
+.kds-page {
+  min-height: 100vh;
+  background: #090a0f;
+  color: #f1f3f9;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+.kds-page-inner {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 24px 24px 72px;
+}
+
+/* ---------- Header ---------- */
+.kds-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #2e324e;
+  margin-bottom: 24px;
+}
+
+.kds-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.kds-title-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #e06a3b 0%, #c84f27 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.kds-title-text { line-height: 1.1; }
+.kds-title-sub {
+  font-size: 11.5px;
+  color: #8e96b7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.kds-header-meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.kds-pill {
+  padding: 6px 12px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  border-radius: 999px;
+  background: #131520;
+  border: 1px solid #2e324e;
+  color: #f1f3f9;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.kds-live-pill { color: #34d399; }
+.kds-live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 8px #34d399;
+  animation: kds-pulse 2s infinite;
+}
+@keyframes kds-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.3); }
+}
+
+/* ---------- Status filter tabs ---------- */
+.kds-tabs {
+  display: flex;
+  gap: 6px;
+  background: #131520;
+  border: 1px solid #2e324e;
+  padding: 4px;
+  border-radius: 12px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+.kds-tab {
+  padding: 8px 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: #8e96b7;
+  cursor: pointer;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.kds-tab.active {
+  background: #1c1e2d;
+  color: #f1f3f9;
+}
+.kds-tab-count {
+  font-size: 10.5px;
+  font-weight: 800;
+  background: #2e324e;
+  color: #f1f3f9;
+  padding: 1px 7px;
+  border-radius: 999px;
+  min-width: 22px;
+  text-align: center;
+}
+.kds-tab.active .kds-tab-count { background: #e06a3b; }
+
+/* ---------- Grid ---------- */
+.kds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.kds-empty {
+  background: #131520;
+  border: 1px dashed #2e324e;
+  border-radius: 16px;
+  padding: 56px 20px;
+  text-align: center;
+  color: #8e96b7;
+  font-size: 14px;
+}
+
+/* ---------- Order Card ---------- */
+.kds-card {
+  background: #131520;
+  border: 1px solid #2e324e;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.kds-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+}
+
+.kds-card-header {
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #2e324e;
+}
+
+.kds-card-id {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: #e06a3b;
+  letter-spacing: 1px;
+}
+.kds-card-time {
+  font-size: 10.5px;
+  color: #8e96b7;
+  font-weight: 600;
+}
+
+.kds-table-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(224, 106, 59, 0.12);
+  border: 1px solid rgba(224, 106, 59, 0.4);
+  color: #f5cdb8;
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.kds-card-body { padding: 14px 16px; }
+.kds-items-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.kds-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 13px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed #2e324e;
+}
+.kds-item-row:last-child { border-bottom: none; padding-bottom: 0; }
+.kds-item-name {
+  flex: 1;
+  font-weight: 600;
+}
+.kds-item-qty {
+  display: inline-block;
+  background: #1c1e2d;
+  color: #34d399;
+  font-weight: 800;
+  padding: 1px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-right: 8px;
+}
+.kds-item-price {
+  color: #8e96b7;
+  font-size: 11.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ---------- Bill ---------- */
+.kds-bill {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #2e324e;
+  display: grid;
+  gap: 4px;
+}
+.kds-bill-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #8e96b7;
+}
+.kds-bill-row.total {
+  color: #f1f3f9;
+  font-size: 14px;
+  font-weight: 800;
+  padding-top: 6px;
+  margin-top: 4px;
+  border-top: 1px dashed #2e324e;
+}
+.kds-bill-pay {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #8e96b7;
+}
+.kds-bill-pay span {
+  color: #f1f3f9;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* ---------- Status badge ---------- */
+.kds-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  border: 1px solid;
+}
+.kds-status-pending   { background: rgba(234, 179, 8, 0.1);   border-color: rgba(234, 179, 8, 0.5);   color: #facc15; }
+.kds-status-accepted  { background: rgba(59, 130, 246, 0.1);  border-color: rgba(59, 130, 246, 0.5);  color: #60a5fa; }
+.kds-status-preparing { background: rgba(224, 106, 59, 0.1);  border-color: rgba(224, 106, 59, 0.5);  color: #f5cdb8; }
+.kds-status-ready     { background: rgba(16, 185, 129, 0.1);  border-color: rgba(16, 185, 129, 0.5);  color: #34d399; }
+.kds-status-completed { background: rgba(255, 255, 255, 0.04); border-color: #2e324e;                  color: #8e96b7; }
+.kds-status-cancelled { background: rgba(239, 68, 68, 0.1);   border-color: rgba(239, 68, 68, 0.5);   color: #f87171; }
+
+/* ---------- Action footer ---------- */
+.kds-card-actions {
+  padding: 12px 16px;
+  border-top: 1px solid #2e324e;
+  background: #1c1e2d;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.kds-card-actions:has(.kds-action:only-child) {
+  grid-template-columns: 1fr;
+}
+.kds-action {
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: #2e324e;
+  color: #f1f3f9;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  letter-spacing: 0.3px;
+}
+.kds-action:hover { transform: translateY(-1px); }
+.kds-action:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+.kds-action-primary {
+  background: linear-gradient(135deg, #e06a3b 0%, #c84f27 100%);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(224, 106, 59, 0.25);
+}
+.kds-action-success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #fff;
+}
+.kds-action-danger {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  border-color: rgba(239, 68, 68, 0.4);
+}
+.kds-action-danger:hover { background: rgba(239, 68, 68, 0.18); }
+
+
+/* ---------- Payment status badges ---------- */
+.kds-pay-status {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  margin-left: 2px;
+}
+.kds-pay-paid     { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
+.kds-pay-unpaid   { background: rgba(234, 179, 8, 0.12);  color: #facc15; border: 1px solid rgba(234, 179, 8, 0.5); }
+.kds-pay-failed   { background: rgba(239, 68, 68, 0.12);  color: #f87171; border: 1px solid rgba(239, 68, 68, 0.5); }
+.kds-pay-refunded { background: rgba(255,255,255,0.06);   color: #8e96b7; border: 1px solid #2e324e; }

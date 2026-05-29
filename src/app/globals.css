@@ -1,0 +1,36 @@
+/* Global resets and base typography. Component styles live in styles/menu.css */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #F8F9FA;
+  color: #1A1C23;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.02); }
+::-webkit-scrollbar-thumb {
+  background: #d8dbe3;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover { background: #E06A3B; }
+
+button {
+  font-family: inherit;
+}

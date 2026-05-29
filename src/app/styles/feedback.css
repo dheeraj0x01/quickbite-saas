@@ -1,0 +1,128 @@
+/* ============================================================
+   Customer feedback card — used inside OrderSuccessModal and
+   anywhere else the diner is asked to rate their meal.
+   ============================================================ */
+
+.fb-card {
+  background: #FFFFFF;
+  border: 1px solid #EEEEEE;
+  border-radius: 16px;
+  padding: 18px 18px 16px;
+  margin-top: 18px;
+  text-align: left;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.fb-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 800;
+  color: #1A1C23;
+}
+.fb-sub {
+  font-size: 12px;
+  color: #7A8090;
+  margin: 2px 0 14px;
+}
+
+.fb-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid #F1F2F4;
+}
+.fb-row:last-of-type { border-bottom: none; padding-bottom: 14px; }
+.fb-row-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1A1C23;
+}
+.fb-stars {
+  display: inline-flex;
+  gap: 2px;
+}
+.fb-star {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+  padding: 4px 2px;
+  color: #DADDE3;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+.fb-star:hover { transform: scale(1.15); }
+.fb-star-on { color: #FFB800; }
+
+.fb-field { display: grid; gap: 6px; margin-top: 4px; }
+.fb-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #7A8090;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+.fb-textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #EEEEEE;
+  padding: 10px 12px;
+  font-size: 13px;
+  font-family: inherit;
+  color: #1A1C23;
+  background: #F8F9FA;
+  resize: vertical;
+  outline: none;
+  transition: border 0.15s ease;
+}
+.fb-textarea:focus { border-color: #E06A3B; }
+
+.fb-error {
+  background: #FEE2E2;
+  color: #991B1B;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.fb-submit {
+  width: 100%;
+  height: 44px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #E06A3B 0%, #C84F27 100%);
+  color: #FFF;
+  font-weight: 700;
+  font-size: 13.5px;
+  font-family: inherit;
+  margin-top: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(224, 106, 59, 0.25);
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+.fb-submit:hover { transform: translateY(-1px); }
+.fb-submit:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+
+.fb-card-done {
+  text-align: center;
+  padding: 22px 18px;
+}
+.fb-thanks-icon {
+  font-size: 32px;
+  margin-bottom: 4px;
+}
+.fb-thanks-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: 17px;
+  color: #1A1C23;
+}
+.fb-thanks-sub {
+  font-size: 12.5px;
+  color: #7A8090;
+  margin-top: 4px;
+}

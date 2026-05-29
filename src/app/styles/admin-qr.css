@@ -1,0 +1,241 @@
+/* ============================================================
+   Admin QR dashboard styles.
+   Premium, mobile-first, print-friendly.
+   ============================================================ */
+
+.qr-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8f9fa 0%, #eef0f4 100%);
+  padding: 32px 20px 64px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  color: #1a1c23;
+}
+
+.qr-page-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.qr-page-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.qr-page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #1a1c23;
+}
+
+.qr-page-subtitle {
+  font-size: 13px;
+  color: #7a8090;
+  margin-top: 4px;
+  letter-spacing: 0.3px;
+}
+
+.qr-page-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.qr-page-pill {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1a1c23;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.qr-page-pill.brand {
+  background: #fff6f2;
+  border-color: #f5cdb8;
+  color: #c24f26;
+}
+
+.qr-toolbar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.qr-toolbar-btn {
+  background: #1a1c23;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+.qr-toolbar-btn:hover { transform: translateY(-1px); }
+.qr-toolbar-btn.ghost {
+  background: #fff;
+  color: #1a1c23;
+  border: 1px solid #e5e7eb;
+}
+
+/* ============ QR Grid ============ */
+.qr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.qr-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+.qr-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.qr-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.qr-card-table-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: #1a1c23;
+}
+
+.qr-card-restaurant {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: #e06a3b;
+}
+
+.qr-card-preview {
+  background: #f8f9fa;
+  border: 1px solid #eeeeee;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.qr-card-preview img {
+  width: 100%;
+  height: auto;
+  max-width: 220px;
+  display: block;
+  image-rendering: pixelated;
+}
+
+.qr-card-url {
+  font-size: 11px;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  color: #7a8090;
+  background: #f8f9fa;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  padding: 8px 10px;
+  word-break: break-all;
+  line-height: 1.4;
+}
+
+.qr-card-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.qr-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: inherit;
+  border-radius: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+.qr-btn-primary {
+  background: linear-gradient(135deg, #e06a3b 0%, #c84f27 100%);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(224, 106, 59, 0.25);
+}
+.qr-btn-primary:active { transform: scale(0.98); }
+.qr-btn-secondary {
+  background: #fff;
+  color: #1a1c23;
+  border: 1px solid #e5e7eb;
+}
+.qr-btn-secondary:hover { background: #f8f9fa; }
+
+/* ============ Empty / Error State ============ */
+.qr-empty {
+  background: #fff;
+  border: 1px dashed #d8dbe3;
+  border-radius: 18px;
+  padding: 48px 24px;
+  text-align: center;
+  color: #7a8090;
+}
+
+/* ============ Print View ============ */
+@media print {
+  .qr-page {
+    background: #fff;
+    padding: 0;
+  }
+  .qr-page-header,
+  .qr-toolbar,
+  .qr-card-actions {
+    display: none !important;
+  }
+  .qr-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .qr-card {
+    page-break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+  .qr-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
